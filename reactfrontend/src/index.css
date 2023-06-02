@@ -1,0 +1,187 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+.btn-site{
+  color: #000 !important;
+  border: 1px solid #000 !important;
+  border-radius: 0 !important;
+  padding: 10px !important;
+  /* width: 200px !important; */
+  font-weight: 600 !important;
+}
+
+
+
+Nav.Link Link a{
+  color:#fff !important;
+  text-decoration:none;
+}
+
+/* Home page  */
+
+.index-banner{
+  height: 600px;
+  /* object-fit: contain; */
+}
+
+.all-prod a{
+  color: #000;
+  text-decoration: none;
+}
+
+.effect,.effect img{
+  border-radius: 0 !important;
+}
+
+
+
+.effect:hover{
+  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+  transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+  color: #000;
+  border: 1px solid #000 !important;
+  z-index: 0;
+
+}
+
+.effect:hover .cart-btn{
+  display: block !important;
+  position: absolute !important;
+  bottom: 10% !important;
+  right: 20% !important;
+  transform: translate(50%,50%);
+  z-index: 1;
+}
+
+.effect:hover .buy-btn{
+  display: block !important;
+  position: absolute !important;
+  top: 60% !important;
+  left: 20% !important;
+  transform: translate(-20%,10%);
+  z-index: 1;
+}
+
+
+
+.card{
+  border: 0 !important;
+}
+
+.cart-btn,.buy-btn{
+  display: none !important;
+}
+
+
+/* Loginpage  */
+
+.loginpage,.registerpage{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 70vh;
+}
+
+.loginpage h1{
+  font-size: 30px;
+}
+
+.btn-orange {
+  color: #000 !important;
+  /* background-color: #FDBE51 !important; */
+  border-color: #000 !important;
+  font-weight: 600 !important;
+  border-radius: 0 !important;
+
+}
+
+.registerpage input,.loginpage input{
+  border-radius: 0 !important;
+  padding: 10px 20px ;
+  border: 1px solid #000;
+}
+/* Header */
+
+.navbar{
+  border-bottom: 1px solid #000;
+  /* border-radius: 0 0 30px 30px ; */
+}
+
+.navbar-nav .nav-item{
+  padding: 10px 0;
+}
+
+.navbar-nav .nav-item:hover{
+  border: 1px solid #000;
+  color: #000;
+  padding: 10px 20px;
+  
+}
+.navbar-nav .nav-item a:hover{
+  color: #000;
+}
+
+.nav-link:hover{
+  border: 1px solid #000;
+  color: #000;
+  padding: 10px 10px;
+}
+
+.heade-cart{
+  margin: 15px 0;
+}
+
+/* Footer */
+
+.footer{
+  /* border-radius: 30px 30px 0 0 ; */
+  border-top: 1px solid #000;
+  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+  transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+}
+
+/* Cart page */
+
+
+  
+  .card-registration .select-input.form-control[readonly]:not([disabled]) {
+  font-size: 1rem;
+  line-height: 2.15;
+  padding-left: .75em;
+  padding-right: .75em;
+  }
+  
+  .card-registration .select-arrow {
+  top: 13px;
+  }
+  
+  .bg-grey {
+  background-color: #eae8e8;
+  }
+
+  
+  @media (min-width: 992px) {
+  .card-registration-2 .bg-grey {
+  border-top-right-radius: 16px;
+  border-bottom-right-radius: 16px;
+  }
+  }
+  
+  @media (max-width: 991px) {
+  .card-registration-2 .bg-grey {
+  border-bottom-left-radius: 16px;
+  border-bottom-right-radius: 16px;
+  }
+  }
+

@@ -1,0 +1,94 @@
+/* Dashboard css */
+
+.wrapper {
+    display: flex;
+}
+
+.wrapper .sidebar {
+    width: 20%;
+}
+
+.wrapper .main-content{
+    width: 80%;
+
+}
+
+.scrollbar
+{
+	height:100vh;
+	overflow-y: scroll;
+    overflow-x: auto;
+}
+
+.spacer{
+    margin: 50px 0;
+}
+
+.btn-site{
+    color: #000 !important;
+    border: 1px solid #000 !important;
+    border-radius: 0 !important;
+    padding: 10px !important;
+    /* width: 100px !important; */
+    font-weight: 600 !important;
+}
+
+.btn-green{
+    color: blue !important;
+    border: 1px solid blue !important;
+    border-radius: 0 !important;
+    padding: 10px !important;
+    /* width: 100px !important; */
+    font-weight: 600 !important;
+}
+
+.btn-red{
+    color: red !important;
+    border: 1px solid red !important;
+    border-radius: 0 !important;
+    padding: 10px !important;
+    /* width: 100px !important; */
+    font-weight: 600 !important;
+}
+
+
+/* Sidebar css */
+
+.contnet{
+    height: 100vh;
+
+}
+
+.contnet a{
+    color: #000;
+    text-decoration: none;
+}
+
+.contnet ul li{
+    list-style: none;
+}
+
+.contnet ul li a{
+    font-size: 16px;
+    font-weight: 600;
+
+}
+
+/* login page  */
+
+.login-form{
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.login-form form .row{
+
+    padding: 50px;
+    border-radius: 10px;
+}
+
+
+
+
