@@ -13,6 +13,7 @@ import 'react-toastify/dist/ReactToastify.css';
 function Cart() {
   const [cartItems, setCartItems] = useState([]);
   const [totalPrice, setTotalPrice] = useState(0);
+  const [totalItems, setTotalItems] = useState(0);
   const [discountedTotalPrice, setDiscountedTotalPrice] = useState(0);
   const [discountprice, setDiscountprice] = useState(0);
   const [couponCode, setCouponCode] = useState("");
@@ -77,12 +78,15 @@ function Cart() {
           JSON.parse(localStorage.getItem("user")).id
         }`
       );
-      console.log(response.data);
-
-      // const updatedCartItems = response.data.filter(item => item.product !== null);
-      // setCartItems(updatedCartItems);
-
       setCartItems(response.data);
+
+      // Total items
+      const totalItemsCount = response.data.reduce(
+        (sum, item) => sum + item.quantity,
+        0
+      );
+      setTotalItems(totalItemsCount);
+
       // Calculate total price
       const totalPrice = response.data.reduce(
         (sum, item) => sum + item.product.price * item.quantity,
@@ -312,7 +316,7 @@ function Cart() {
 
                           <div className="d-flex justify-content-between mb-4">
                             <h6 className="text-uppercase">Total items </h6>
-                            <h6>{cartItems.length}</h6>
+                            <h6>{totalItems}</h6>
                           </div>
                           <hr className="my-4" />
                           <div className="d-flex justify-content-between mb-5">

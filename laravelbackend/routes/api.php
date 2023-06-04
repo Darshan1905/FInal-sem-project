@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\CheckoutController;
+use App\Http\Controllers\ContactController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\CartController;
 
@@ -40,3 +41,7 @@ Route::put('/cart/{userid}/{productid}', [CartController::class, 'updateCartItem
 // Checkout api
 
 Route::post('/placeorder',[CheckoutController::class, 'placeorder']);
+
+// Contact us api
+
+Route::post('/contactus',[ContactController::class, 'contact']);

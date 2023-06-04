@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\AdminController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\CategoryController;
 
@@ -19,6 +20,10 @@ Route::post('/logout',[AuthController::class,'logout'])->middleware('auth');
 Route::group(['prefix'=>'/admin','middleware'=>['auth','isAdmin']],function(){
 
     Route::get('/dashboard', function () {return view('admin.dashboard');});
+
+    // Order
+      Route::get('/orderitems',[AdminController::class,'orderItems']);
+
 
     // User Routes
     Route::get('/user',[UserController::class,'index']);
@@ -49,9 +54,14 @@ Route::group(['prefix'=>'/admin','middleware'=>['auth','isAdmin']],function(){
 
 // User Routes
 
-Route::group(['prefix'=>'/user','middleware'=>['auth','user']],function(){
+// Route::group(['prefix'=>'/user','middleware'=>['auth','user']],function(){
 
-    Route::get('/dashboard', function () {return view('user.dashboard');});
+//     Route::get('/dashboard', function () {return view('user.dashboard');});
+
+//     Route::get('/profile',[UserController::class,'userProfile']);
+//     Route::get('/edituser/{id}',[UserController::class,'edit']);
+//     Route::post('/updateuser/{id}',[UserController::class,'update']);
 
 
-});
+
+// });

@@ -27,6 +27,12 @@ class Product extends Model
         return $this->hasMany(Cart::class,'product_id','id');
     }
 
+    public function orderitems(){
+        return $this->hasMany(Orderitems::class,'product_id', 'id');
+    }
+
+
+
     // public function user(){
     //     return $this->hasOne(User::class);
     // }

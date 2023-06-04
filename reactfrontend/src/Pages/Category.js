@@ -6,7 +6,7 @@ import { Link  } from 'react-router-dom'
 
 const Category = () => {
 
-    const [category, setCategory] = useState([])
+  const [category, setCategory] = useState([])
 
 
     async function getallcategory() {

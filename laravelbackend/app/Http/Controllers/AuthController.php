@@ -30,8 +30,8 @@ class AuthController extends Controller
                 Alert::success('Successfully Loged in');
                 return redirect('admin/dashboard');
             }else if(Auth::user()->role === 'user'){
-                Alert::success('Successfully Loged in');
-                return redirect('user/dashboard');
+                Alert::error('You are not allow to access this');
+                // return redirect('user/dashboard');
             }
             Alert::success('There must be an error');
             return back();

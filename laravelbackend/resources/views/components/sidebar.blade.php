@@ -2,11 +2,11 @@
     <div class="contnet ps-4">
 
         @if(Auth::user()->role === 'admin')
-     <h1 class="  pt-5">
+     <h1 class="  pt-3">
         <a href="{{ url('admin/dashboard') }}"><img src="{{asset('/assets/images/logo.png')}}" alt="" width="50%"></a>
     </h1>
     @else
-    <h1 class="  pt-5">
+    <h1 class="  pt-3">
         <a href="{{ url('user/dashboard') }}"><img src="{{asset('/assets/images/logo.png')}}" alt="" width="50%"></a>
     </h1>
     @endif
@@ -14,18 +14,6 @@
         <div class="spacer"></div>
 
         @if(Auth::user()->role === 'admin')
-        <ul class="ps-2 my-5">
-            <h4>Admin</h4>
-         <li class="my-4">
-
-             <a href="{{ url('admin/user') }}" class="d-flex align-items-center justify-content-start gap-3 ms-2"> <i class="fa-sharp fa-solid fa-user"></i>Admin Profile </a>
-            </li>
-            <li class="my-4">
-
-                <a href="{{ url('admin/user') }}" class="d-flex align-items-center justify-content-start gap-3 ms-2"> <i class="fa-sharp fa-solid fa-user"></i>Edit Profile </a>
-               </li>
-        </ul>
-
         <ul class="ps-2 my-5">
             <h4>Category</h4>
 
@@ -50,6 +38,14 @@
                    <i class="fa-sharp fa-solid fa-shop"></i>Add Products  </a>
                </li>
         </ul>
+        <ul class="ps-2">
+            <h4>Order</h4>
+            <li class="my-4">
+
+                <a href="{{ url('admin/orderitems') }}" class="d-flex align-items-center justify-content-start gap-3 ms-2"> <i class="fa-sharp fa-solid fa-user"></i>Order Items </a>
+               </li>
+
+           </ul>
         <ul class="ps-2 my-5">
             <h4>User</h4>
          <li class="my-4">
@@ -63,28 +59,21 @@
             <h4>User</h4>
             <li class="my-4">
 
-                <a href="{{ url('user/user') }}" class="d-flex align-items-center justify-content-start gap-3 ms-2"> <i class="fa-sharp fa-solid fa-user"></i>User Profile </a>
+                <a href="{{ url('user/profile') }}" class="d-flex align-items-center justify-content-start gap-3 ms-2"> <i class="fa-sharp fa-solid fa-user"></i>User Profile </a>
                </li>
             <li class="my-4">
-                <a href="{{ url('user/getproduct') }}" class="d-flex align-items-center justify-content-start gap-3 ms-2" >
+                <a href="{{url('user/edituser/'.Auth::user()->id)}}" class="d-flex align-items-center justify-content-start gap-3 ms-2" >
                    <i class="fa-sharp fa-solid fa-user"></i> Edit Profile  </a>
                </li>
 
            </ul>
-           <ul class="ps-2">
-            <h4>Order</h4>
-            <li class="my-4">
 
-                <a href="{{ url('user/user') }}" class="d-flex align-items-center justify-content-start gap-3 ms-2"> <i class="fa-sharp fa-solid fa-user"></i>Order Items </a>
-               </li>
-
-           </ul>
           @endif
 
             <div class="container ">
                     <form method="POST" action="{{url('/logout')}}">
                         @csrf
-                        <button class="btn btn-site mt-3" type="submit">Logout</button>
+                        <button class="btn btn-site" type="submit">Logout</button>
                     </form>
             </div>
 
