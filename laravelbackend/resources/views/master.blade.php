@@ -34,6 +34,7 @@
 
     <script src="{{ asset('/assets/js/bootstrap5.js') }}"></script>
     <script src="https://kit.fontawesome.com/423dc4fb65.js" crossorigin="anonymous"></script>
+    
 
 
 </body>

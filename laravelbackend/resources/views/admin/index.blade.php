@@ -36,7 +36,7 @@
                 <td>{{$item->email}}</td>
                 <td>{{$item->role}}</td>
                 <td>
-                    <a class="btn btn-green mx-1">Edit</a>
+                    {{-- <a class="btn btn-green mx-1">Edit</a> --}}
                     <a href="admin/delete/{{$item->id}}" class="btn btn-red mx-1">Delete</a>
                 </td>
               </tr>

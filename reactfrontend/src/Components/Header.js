@@ -1,11 +1,18 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import { useNavigate } from "react-router";
-import {NavDropdown} from 'react-bootstrap';
+import { NavDropdown } from 'react-bootstrap';
+import { useEffect, useState } from "react";
+import axios from "axios";
 
 
 
 const Header = () => {
+
+ 
+
+
+
 
   const users = JSON.parse(localStorage.getItem('user'));
 
@@ -40,7 +47,15 @@ const Header = () => {
 
               <Link to="/contactus" className='fw-bold nav-item' >Contact Us</Link>
               
-              <Link to="/cart"> <img className='mx-2 heade-cart' src="/assets/images/cart-shopping-solid.svg" alt="" width="20" /></Link>
+              <Link to="/cart">
+                
+               <div class="cart">
+                  {/* <span class="count fw-bold" style={{ position: "relative", top: "-15px", right:"-40px" }}>{cartItems.length}</span> */}
+                  <img className='mx-2 heade-cart' src="/assets/images/cart-shopping-solid.svg" alt="" width="20" />
+              </div>
+
+               
+              </Link>
               
         
             </ul>

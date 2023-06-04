@@ -34,6 +34,29 @@ const AllProduct = () => {
   
   }, [])
   
+
+  function addTOCart(id) {
+    // e.preventDefault();
+
+    const data = {
+      userid:JSON.parse(localStorage.getItem('user')).id,
+      productid: id,
+      quantity: 1
+    }
+
+    // console.log(data)
+    axios.post('http://127.0.0.1:8000/api/addtocart', data).then(response => {
+      console.log(response.data);
+      if (response.data.status == 201) {
+        toast.success('Product successfully added to cart');
+      } else if (response.data.status == 202) {
+        toast.error('Product is already in the cart');
+      }
+    })
+   
+    
+  }
+
   
  
 
@@ -53,20 +76,25 @@ const AllProduct = () => {
           products.map((product,i) => {
             return (
               <div className="col-lg-3 col-md-4 col-sm-6 my-3 all-prod" key={i}>
+               
+                <div className="card effect">
                 <Link to={"/" + product.slug}>
-                  <div className="card effect">
-                    <img className="card-img-top " src={"http://127.0.0.1:8000/storage/uploads/" + product.image} alt="Card image cap"/>
-                    <div className="card-body">
+                    <img className="card-img-top " src={"http://127.0.0.1:8000/storage/uploads/" + product.image} alt="Card image cap" />
+                    </Link>
+                  <div className="card-body">
+                  <Link to={"/" + product.slug}>
                       <h5 className="card-title">{product.title}</h5>
+                      </Link>
+                      
                       <p className="card-text p-description">{product.description}</p>
                       
                       <h5 className="">{product.price} Rs</h5>
 
-                      <span className="btn btn-orange cart-btn"><img src="/assets/images/cart-shopping-solid.svg" alt="" width="20" /></span>
+                      <a href="#" onClick={()=>addTOCart(product.id)} className="btn btn-orange cart-btn"><img src="/assets/images/cart-shopping-solid.svg" alt="" width="20" /></a>
                       
                     </div>
                   </div>
-                  </Link>
+                 
                 </div>
             )
           })

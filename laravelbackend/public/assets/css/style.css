@@ -90,5 +90,13 @@
 }
 
 
+/* Header */
+
+.count{
+    position: relative;
+    top: -7px !important;
+    right: -8px !important;
+}
+
 
 

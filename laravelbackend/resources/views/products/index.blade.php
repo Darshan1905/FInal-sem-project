@@ -41,6 +41,7 @@
         <td>
             <a href="{{url('admin/editproduct/'.$item->id)}}" class="btn btn-green">Edit</a>
             <a href="{{url('admin/deleteproduct/'.$item->id)}}" class="btn btn-red">Delete</a>
+
             </td>
     </tr>
     @endforeach

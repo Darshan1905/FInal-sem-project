@@ -9,9 +9,9 @@ use App\Http\Controllers\CategoryController;
 
 // Auth Routes
 
-Route::get('/', function () {return view('auth.login');})->name('root');
-Route::post('/login',[AuthController::class,'auth']);
-Route::post('/logout',[AuthController::class,'logout']);
+Route::get('/', function () {return view('auth.login');})->name('root')->middleware('guest');
+Route::post('/login',[AuthController::class,'auth'])->middleware('guest');
+Route::post('/logout',[AuthController::class,'logout'])->middleware('auth');
 
 
 // Admin Routes

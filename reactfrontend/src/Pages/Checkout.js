@@ -31,7 +31,8 @@ function Cart() {
       address : '',
       city : '',
       state : '',
-    zipcode: '',
+      zipcode: '',
+      payment_mode: '',
   });
     
     const handleInput = (e) => {
@@ -54,7 +55,7 @@ function Cart() {
             city : checkoutInput.city,
             state : checkoutInput.state,
             zipcode : checkoutInput.zipcode,
-
+            payment_mode: checkoutInput.payment_mode,
         }
 
         axios.post(`http://127.0.0.1:8000/api/placeorder`, data ).then(res => {
@@ -225,7 +226,36 @@ function Cart() {
                                             <input type="text" name="zipcode" onChange={handleInput} value={checkoutInput.zipcode} className="form-control" />
                                             <span className="text-danger">{error.zipcode}</span>
                                         </div>
-                                     </div>
+                                   </div>
+                                   <div className="my-2 col-md-6">
+                                      <div className="form-group">
+                                  <label className="my-3">Payment Method:</label>
+                                 
+                                        <div className="form-check">
+                                          <input
+                                            type="radio"
+                                            name="payment_mode"
+                                            value="COD"
+                                            checked={checkoutInput.payment_mode === "COD"}
+                                            onChange={handleInput}
+                                            className="form-check-input"
+                                          />
+                                          <label className="form-check-label">Cash on Delivery</label>
+                                        </div>
+                                        <div className="form-check">
+                                          <input
+                                            type="radio"
+                                            name="payment_mode"
+                                            value="Razorpay"
+                                            checked={checkoutInput.payment_mode === "Razorpay"}
+                                            onChange={handleInput}
+                                            className="form-check-input"
+                                          />
+                                          <label className="form-check-label">Razorpay</label>
+                                  </div>
+                                  <span className="text-danger">{error.payment_mode}</span>
+                                  </div>
+                                  </div>
                                      <div className="mt-5 col-md-12">
                                         <div className="form-group text-end">
                                         <button className="btn btn-dark text-white rounded" onClick={submitOrder}>Place order</button>                                            

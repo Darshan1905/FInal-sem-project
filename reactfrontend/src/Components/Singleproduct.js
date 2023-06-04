@@ -71,6 +71,7 @@ const Singleproduct = () => {
       console.log(response.data);
       if (response.data.status == 201) {
         toast.success('Product successfully added to cart');
+   
       } else if (response.data.status == 202) {
         toast.error('Product is already in the cart');
       }
@@ -102,7 +103,7 @@ const Singleproduct = () => {
 
             <h6><b>About this item: </b><br></br><br></br>{sproduct.description}</h6>
             
-            {sproduct.quantity > 0 ? <div className="d-flex align-items-center justify-content-between w-75">
+            {sproduct.quantity >= 0 ? <div className="d-flex align-items-center justify-content-between w-75">
             <a href="#" className="btn btn-site my-3" onClick={()=>addTOCart(sproduct.id)}>
               Add to cart
             </a><br></br>

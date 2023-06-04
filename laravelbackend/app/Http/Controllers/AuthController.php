@@ -10,23 +10,34 @@ use Alert;
 
 class AuthController extends Controller
 {
+
+    public function __construct()
+    {
+        $this->middleware('guest')->except('logout');
+    }
+
+
     public function auth(Request $req){
 
         $this->validate($req,[
             'email'=>'required',
-            'password'=>'required',
+            'password'=>'required|min:6',
         ]);
 
         if(Auth::attempt($req->only('email','password'))){
 
             if(Auth::user()->role === 'admin'){
+                Alert::success('Successfully Loged in');
                 return redirect('admin/dashboard');
             }else if(Auth::user()->role === 'user'){
+                Alert::success('Successfully Loged in');
                 return redirect('user/dashboard');
             }
-            return "Login failed";
+            Alert::success('There must be an error');
+            return back();
         }
-        return redirect('/');
+        Alert::error('Username or Password are wrong');
+        return back();
     }
 
     public function logout(Request $req){

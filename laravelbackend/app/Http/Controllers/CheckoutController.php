@@ -24,6 +24,7 @@ class CheckoutController extends Controller
             'city' => 'required|max:191',
             'state' => 'required|max:191',
             'zipcode' => 'required|max:191',
+            'payment_mode' => 'required|max:191',
 
            ]);
 
@@ -48,7 +49,7 @@ class CheckoutController extends Controller
              $order->city = $req->city;
              $order->state = $req->state;
              $order->zipcode = $req->zipcode;
-             $order->payment_mode = "COD";
+             $order->payment_mode =  $req->payment_mode;;
              $order->tracking_no = 'fundaecom'.rand(1111,9999);
              $order->save();
 
